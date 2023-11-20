@@ -1,5 +1,6 @@
 package at.spengergasse;
 
+// Änderung
 public class Pirat {
     
     private String name;
