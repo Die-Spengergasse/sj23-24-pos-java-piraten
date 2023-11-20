@@ -2,7 +2,32 @@ package at.spengergasse;
 
 // Änderung
 public class Pirat {
-    
+
+    public Pirat(String name, int gesundheit, boolean holzbein) {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void trinken (char getraenk) {
+
+    }
+
+    public String toString () {
+        return "";
+    }
+    public boolean isHolzbein() {
+        return holzbein;
+    }
+
+    public void setHolzbein(boolean holzbein) {
+        this.holzbein = holzbein;
+    }
+
     private String name;
     private int gesundheit;  // 0 - 100 
     private boolean holzbein;
@@ -31,7 +56,9 @@ public class Pirat {
         return gesundheit;
     }
     
-    
+    public void setGesundheit (int gesundheit) {
+        this.gesundheit = gesundheit;
+    }
     
     
     
