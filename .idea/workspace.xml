@@ -5,25 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ae8de3-8df8-4b32-a660-f5a31bdd696c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/spengergasse/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/spengergasse/Pirat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/spengergasse/Schiff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/spengergasse/TestPirat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/spengergasse/TestSchiff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/spengergasse/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/spengergasse/TestPirat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/spengergasse/TestPirat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/spengergasse/TestSchiff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/spengergasse/TestSchiff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2YR6TzzB4yzr4EvZ7Mxcl2AEmAq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,15 +42,34 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_opened_file_path": "/home/georg/IdeaProjects/pos-java-kif-piratenschiff/src/main/java/at/spengergasse",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "onboarding.tips.debug.path": "/home/georg/IdeaProjects/pos-java-kif-piratenschiff/src/main/java/at/spengergasse/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/at/spengergasse" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="at.spengergasse" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="at.spengergasse" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="at.spengergasse.Main" />
@@ -74,12 +98,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700476057434</updated>
-      <workItem from="1700476058826" duration="726000" />
+      <workItem from="1700476058826" duration="2171000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit piraten">
+      <option name="closed" value="true" />
+      <created>1700477061178</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700477061178</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit piraten" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit piraten" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
