@@ -1,47 +1,72 @@
 package at.spengergasse;
 
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PiratTest {
-    private Pirat pirat;
-
-    @Test
-    void kielholen() {
-        Pirat p = new Pirat();
-        p.kielholen();
-        assertEquals(p.getGesundheit(), 50);
-    }
-
-    @Test
-    void getGesundheit() {
-    }
+    Pirat p;
 
     @BeforeEach
     void setUp() {
-        pirat = new Pirat("Georg", 80, true);
+        p = new Pirat("Salz", 100, true);
     }
 
-    @AfterEach
-    void tearDown() {
-        pirat = null;
+    @Test
+    void setName() {
+        p.setName("Ignaz");
+        assertEquals("Ignaz", p.getName());
     }
 
     @Test
     void setGesundheit() {
+        p.setGesundheit(70);
+        assertEquals(70,p.getGesundheit());
     }
 
     @Test
-    void trinkeRum() {
-        pirat.trinken('r');
-        assertEquals(100, pirat.getGesundheit());
+    void setHolzbein() {
+        p.setHolzbein(true);
+        assertTrue(p.getHolzbein());
+        p.setHolzbein(false);
+        assertFalse(p.getHolzbein());
     }
+
     @Test
-    void trinkeWasser() {
-        pirat.trinken('w');
-        assertEquals(70, pirat.getGesundheit());
+    void getName() {
+        assertEquals("Salz",p.getName());
+    }
+
+    @Test
+    void getGesundheit() {
+        assertEquals(100,p.getGesundheit());
+    }
+
+    @Test
+    void getHolzbein() {
+        assertTrue(p.getHolzbein());
+    }
+
+    @Test
+    void kielholen() {
+        p.kielholen();
+        if(p.getHolzbein()) {
+            assertEquals(5,p.getGesundheit());
+        } else {
+            assertEquals(10, p.getGesundheit());
+        }
+    }
+
+    @Test
+    void trinken() {
+        p.trinken('w');
+        assertEquals(90,p.getGesundheit());
+    }
+
+    @Test
+    void testToString() {
+        assertEquals("`Aye` - Trunkenbold Salz meldet sich an Board! 100 %, Holzbein",p.toString());
     }
 }
