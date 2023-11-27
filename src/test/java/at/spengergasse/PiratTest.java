@@ -1,6 +1,5 @@
 package at.spengergasse;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,10 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PiratTest {
     Pirat p;
+    private Schiff schiff_s;
 
     @BeforeEach
     void setUp() {
         p = new Pirat("Salz", 100, true);
+        schiff_s = new Schiff('s');
     }
 
     @Test
@@ -23,7 +24,7 @@ class PiratTest {
     @Test
     void setGesundheit() {
         p.setGesundheit(70);
-        assertEquals(70,p.getGesundheit());
+        assertEquals(70, p.getGesundheit());
     }
 
     @Test
@@ -36,12 +37,12 @@ class PiratTest {
 
     @Test
     void getName() {
-        assertEquals("Salz",p.getName());
+        assertEquals("Salz", p.getName());
     }
 
     @Test
     void getGesundheit() {
-        assertEquals(100,p.getGesundheit());
+        assertEquals(100, p.getGesundheit());
     }
 
     @Test
@@ -51,22 +52,33 @@ class PiratTest {
 
     @Test
     void kielholen() {
+        schiff_s.anheuern(p);
         p.kielholen();
-        if(p.getHolzbein()) {
-            assertEquals(5,p.getGesundheit());
+        if (p.getHolzbein()) {
+            assertEquals(5, p.getGesundheit());
         } else {
             assertEquals(10, p.getGesundheit());
         }
+        p.trinken('w');
+        assertEquals(0, p.getGesundheit());
     }
 
     @Test
     void trinken() {
         p.trinken('w');
-        assertEquals(90,p.getGesundheit());
+        assertEquals(90, p.getGesundheit());
+        p.trinken('w');
+        assertEquals(80, p.getGesundheit());
+        p.trinken('w');
+        assertEquals(70, p.getGesundheit());
+        p.trinken('r');
+        assertEquals(90, p.getGesundheit());
+        p.trinken('r');
+        assertEquals(100, p.getGesundheit());
     }
 
     @Test
     void testToString() {
-        assertEquals("`Aye` - Trunkenbold Salz meldet sich an Board! 100 %, Holzbein",p.toString());
+        assertEquals("`Aye` - Trunkenbold Salz meldet sich an Board! 100 %, Holzbein", p.toString());
     }
 }

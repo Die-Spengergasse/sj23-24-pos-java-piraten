@@ -84,7 +84,38 @@ public class Schiff {
         return rw;
     }
 
+    public boolean hasPirat (Pirat pirat) {
+        // FrAGE null
+        if (this.kapitaen == pirat) return true;
+        for (Pirat p: piraten) {
+            if (p == pirat) return true;
+        }
+        return false;
+    }
     public void piratIstTot(Pirat pirat) {
+        // 1 pirat ist nicht tot
+        if (pirat.getGesundheit() != 0) {
+            throw new IllegalArgumentException("Pirat ist gar nicht tot!");
+        }
+        // 2 p ist nicht auf diesem Schiff
+        if (pirat.getSchiff() != this) {
+            throw new IllegalArgumentException("Pirat glaubt dass er woanders ist.");
+        }
+        System.out.println("Schiff verliert pirat:");
+        System.out.println(pirat);
+        if (this.kapitaen == pirat) {
+            pirat.setSchiff(null);
+            this.kapitaen = null;
+            return;
+        }
+        for (int i = 0; i< piraten.length; i++) {
+            if (piraten[i] == pirat) {
+                pirat.setSchiff(null);
+                piraten[i] = null;
+                return;
+            }
+        }
+        System.out.println("Pirat war schon vorher nicht an Bord.");
         // TODO entsprechenden Platz finden und auf null setzen!
     }
 }

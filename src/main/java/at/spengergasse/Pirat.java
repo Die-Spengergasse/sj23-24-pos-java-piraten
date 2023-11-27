@@ -37,10 +37,21 @@ public class Pirat {
     }
 
     public void setGesundheit(int gesundheit) {
-        if (gesundheit < 0 || gesundheit > 100) {
-            throw new IllegalArgumentException("Gesundheit darf nur >= 0 und <= 100 sein!");
+        String ungueltig = "Yo-ho-ho - Gültiger Bereich für die Gesundheit: 0 bis 100 Prozent";
+        if (gesundheit < 0) {
+            System.out.println(ungueltig);
+            this.gesundheit = 0;
+            return;
+        }
+        if (gesundheit > 100) {
+            System.out.println(ungueltig);
+            this.gesundheit = 100;
+            return;
         }
         this.gesundheit = gesundheit;
+        if (gesundheit == 0 && this.schiff != null) {
+            this.schiff.piratIstTot(this);
+        }
     }
 
     public boolean getHolzbein() {
@@ -70,34 +81,16 @@ public class Pirat {
 
     public void trinken(char getraenk) {
         switch (getraenk) {
-            case 'w' -> {
-                this.gesundheit -= 10;
-                if (this.gesundheit < 0) this.gesundheit = 0;
-                if (this.gesundheit == 0) {
-                    System.out.println("Haudegen " + this.name + " ging über die Planke");
-                }
-            }
-            case 'g' -> {
-                this.gesundheit += 10;
-                if (this.gesundheit > 100) this.gesundheit = 100;
-                if (this.gesundheit == 100) {
-                    System.out.println("Haudegen " + this.name + " erfreut sich voller Gesundheit");
-                }
-            }
-            case 'r' -> {
-                this.gesundheit += 20;
-                if (this.gesundheit > 100) this.gesundheit = 100;
-                if (this.gesundheit == 100) {
-                    System.out.println("Haudegen " + this.name + " erfreut sich voller Gesundheit");
-                }
-            }
-            default -> {
-                throw new IllegalArgumentException("Es darf nur 'w', 'g' oder 'r' getrunken werden!");
-            }
-
+            case 'w' -> setGesundheit(this.gesundheit - 10);
+            case 'g' -> setGesundheit(this.gesundheit + 10);
+            case 'r' -> setGesundheit(this.gesundheit + 20);
+            default -> throw new IllegalArgumentException("Es darf nur 'w', 'g' oder 'r' getrunken werden!");
         }
-        if (this.gesundheit == 0 && schiff != null) {
-            this.schiff.piratIstTot(this);
+        if (this.gesundheit == 0) {
+            System.out.println("Haudegen " + this.name + " ging über die Planke");
+        }
+        if (this.gesundheit == 100) {
+            System.out.println("Haudegen " + this.name + " erfreut sich voller Gesundheit");
         }
     }
 
