@@ -5,13 +5,8 @@ public class Schiff {
     private char typ;
     private Pirat kapitaen;
     private Pirat[] piraten;
-
-    /**
-     * Constructor for objects of class Schiff
-     */
     public Schiff(char typ) {
         setTyp(typ);
-
     }
 
     public char getTyp() {
@@ -56,11 +51,13 @@ public class Schiff {
     public void anheuern(Pirat pirat) {
         if (kapitaen == null) {
             this.kapitaen = pirat;
+            this.kapitaen.setSchiff(this);
             return;
         }
         for (int i = 0; i < piraten.length; i++) {
             if (piraten[i] == null) {
                 piraten[i] = pirat;
+                piraten[i].setSchiff(this);
                 return;
             }
         }
@@ -72,7 +69,7 @@ public class Schiff {
     }
 
     public String toString() {
-        String rw = "";
+        String rw;
         switch (this.getTyp()) {
             case 's' -> rw = "Crew Schaluppe (3): " + "\n" + "______________________" + "\n";
             case 'b' -> rw = "Brigg (4): " + "\n" + "______________________" + "\n";
@@ -85,5 +82,9 @@ public class Schiff {
             rw += piraten[i].toString();
         }
         return rw;
+    }
+
+    public void piratIstTot(Pirat pirat) {
+        // TODO entsprechenden Platz finden und auf null setzen!
     }
 }
